@@ -573,7 +573,7 @@ export default Kapsule({
 
       state.resetBtn = state.svg.append('text')
         .attr('class', 'reset-zoom-btn')
-        .text('Reset Zoom')
+        .text('Сбросить масштаб')
         .style('text-anchor', 'end')
         .on('mouseup' , function() {
           state.svg.dispatch('resetZoom');
