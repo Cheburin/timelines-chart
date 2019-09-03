@@ -817,7 +817,7 @@ export default Kapsule({
       // X
       state.xAxis
         .scale(state.xScale)
-        .ticks(Math.round(state.graphW*0.0011))
+        .ticks(Math.round(state.graphW*0.0033))
         .tickFormat(state.xTickFormat);
       state.xGrid
         .scale(state.xScale)
