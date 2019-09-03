@@ -492,8 +492,8 @@ export default Kapsule({
           const dateFormat = (state.useUtc ? d3UtcFormat : d3TimeFormat)(`${state.timeFormat}${state.useUtc?' (UTC)':''}`);
           return '<strong>' + d.labelVal + ' </strong>' + state.zDataLabel
             + (normVal?' (<strong>' + Math.round((d.val-state.zColorScale.domain()[0])/normVal*100*100)/100 + '%</strong>)':'') + '<br>'
-            + '<strong>From: </strong>' + dateFormat(d.timeRange[0]) + '<br>'
-            + '<strong>To: </strong>' + dateFormat(d.timeRange[1]);
+            + '<strong>От: </strong>' + dateFormat(d.timeRange[0]) + '<br>'
+            + '<strong>До: </strong>' + dateFormat(d.timeRange[1]);
         });
 
       state.svg.call(state.segmentTooltip);
