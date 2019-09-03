@@ -817,7 +817,7 @@ export default Kapsule({
       // X
       state.xAxis
         .scale(state.xScale)
-        .ticks(Math.round(state.graphW*0.033))
+        .ticks(Math.round(state.graphW*0.0011))
         .tickFormat(state.xTickFormat);
       state.xGrid
         .scale(state.xScale)
@@ -833,6 +833,11 @@ export default Kapsule({
           .style('stroke-opacity', 1)
           .style('fill-opacity', 1);
 
+      state.svg.select('g.x-axis')
+        .selectAll('text')
+        .each(function(d) {
+          console.log(d);
+        })
       /* Angled x axis labels
        state.svg.select('g.x-axis').selectAll('text')
        .style('text-anchor', 'end')
