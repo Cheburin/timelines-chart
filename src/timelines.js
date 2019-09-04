@@ -731,7 +731,7 @@ export default Kapsule({
     function setupDimensions() {
       state.graphW = state.width-state.leftMargin-state.rightMargin;
       state.graphH = d3Min([state.nLines*state.maxLineHeight, state.maxHeight-state.topMargin-state.bottomMargin]);
-      state.height = state.graphH + state.topMargin + state.bottomMargin;
+      state.height = 150;//state.graphH + state.topMargin + state.bottomMargin;
 
       state.svg.transition().duration(state.transDuration)
         .attr('width', state.width)
@@ -833,16 +833,10 @@ export default Kapsule({
           .style('stroke-opacity', 1)
           .style('fill-opacity', 1);
 
-      state.svg.select('g.x-axis')
-        .selectAll('text')
-        .each(function(d) {
-          console.log(d);
-        })
-      /* Angled x axis labels
+      // Angled x axis labels
        state.svg.select('g.x-axis').selectAll('text')
        .style('text-anchor', 'end')
        .attr('transform', 'translate(-10, 3) rotate(-60)');
-       */
 
       state.xGrid.tickSize(state.graphH);
       state.svg.select('g.x-grid')
