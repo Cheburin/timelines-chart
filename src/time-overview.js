@@ -61,7 +61,7 @@ export default Kapsule({
 
     state.svg
       .attr('width', state.width)
-      .attr('height', state.height);
+      .attr('height', 100);//state.height);
 
     state.svg.select('.brusher-margins')
       .attr('transform', `translate(${state.margins.left},${state.margins.top})`);
@@ -82,5 +82,9 @@ export default Kapsule({
     state.svg.select('.brush')
       .call(state.brush.extent([[0, 0], [brushWidth, brushHeight]]))
       .call(state.brush.move, state.currentSelection.map(state.scale));
+
+    state.svg.select('g.x.axis').selectAll('text')
+        .style('text-anchor', 'end')
+        .attr('transform', 'translate(-10, 3) rotate(-60)');    
   }
 });
